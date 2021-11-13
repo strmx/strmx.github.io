@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+
+  <!-- IE10 and IE11 on Windows Phone have a small tap highlight when you tap an element. Adding this meta tag removes this. -->
+  <meta name="msapplication-tap-highlight" content="no" />
+  <title>Title of the document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: 100%;
+      height: 100%;
+      background: #000;
+
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    .canvas-wrapper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 32px;
+      bottom: 32px;
+    }
+
+    canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .top-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 32px;
+      text-align: center;
+
+      font-size: 20px;
+    }
+
+    .top-menu .scores {
+      display: inline-block;
+      position: relative;
+      padding-top: 2px;
+      color: #ffc92a;
+    }
+
+    .top-menu .scores img {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+    }
+
+    .bottom-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 32px;
+
+      vertical-align: middle;
+      line-height: 30px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .bottom-menu .info {
+      vertical-align: middle;
+      float: left;
+    }
+
+    .bottom-menu .fps {
+      display: inline-block;
+      float: right;
+      padding-right: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+  <div class="top-menu">
+    <div class="scores"><img src="images/scores.svg" height="22" /><strong>0</strong></div>
+  </div>
+
+
+  <style type="text/css">
+    .modal {
+      z-index: 1;
+      position: relative;
+      width: 20%;
+      max-width: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%);
+      transform: translateX(-50%);
+    }
+    .modal button {
+      width: 100%;
+    }
+  </style>
+  <div firstScreen class="modal">
+    <button playButton>Ok Let's Play!</button>
+    <button newMapButton>I don't like this map</button>
+  </div>
+
+
+  <div class="canvas-wrapper">
+    <canvas>
+  </div>
+
+  <div class="bottom-menu">
+    <div class="info"><span>[ < ] - turn left / [ > ] - turn right</span></div>
+    <div class="fps"><span>FPS: <span><strong></strong></div>
+  </div>
+
+  <script src="vendors/modernizr.js"></script>
+  <script src="vendors/jquery-2.1.4.min.js"></script>
+  <script src="vendors/rx.all.js"></script>
+  <script src="vendors/stats.js"></script>
+  <script src="vendors/babylon.js"></script>
+  <script src="vendors/babylon.skyMaterial.min.js"></script>
+  <script src="vendors/random.js"></script>
+  <script data-main="js/app" src="vendors/require.js"></script>
+  <script>
+    // buster
+    window.require.config({
+        // urlArgs: Date.now()
+    });
+  </script>
+
+</body>

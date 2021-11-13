@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Unit-tests</title>
+  <link rel="stylesheet" href="vendors/test/mocha.css">
+  <script src="vendors/test/mocha.js"></script>
+  <script src="vendors/test/chai.js"></script>
+  <script>
+    mocha.setup('bdd');
+    window.assert = chai.assert;
+  </script>
+</head>
+<body>
+
+  <div id="mocha"></div>
+
+  <!-- include source files here... -->
+  <script src="vendors/modernizr.js"></script>
+  <script src="vendors/jquery-2.1.4.min.js"></script>
+  <script src="vendors/rx.all.js"></script>
+  <script src="vendors/babylon.js"></script>
+  <script src="vendors/random.js"></script>
+  <script src="vendors/require.js"></script>
+  <script>
+    window.require.config({
+        baseUrl: 'js/test/',
+        // urlArgs: Date.now(),
+    });
+
+    require([
+      'PatternHelper'
+    ], function(foo) {
+      mocha.run();
+    });
+  </script>
+
+
+</body>
+</html>
